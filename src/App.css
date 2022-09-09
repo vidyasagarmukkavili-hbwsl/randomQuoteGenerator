@@ -2,6 +2,13 @@
 
 .App {
   text-align: center;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translateX(50%) translateY(-50%);
+  transform: translateX(50%) translateY(-50%);
 }
 
 body {
@@ -16,8 +23,8 @@ body {
 
 .main-container {
   /* max-width: 600px; */
-  max-width: 450px;
-  margin: 0 auto;
+  max-width: 550px;
+  margin: auto auto;
 }
 
 .container__box {
@@ -70,6 +77,11 @@ body {
   color: white;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
+}
+
+.socials {
+  display: flex;
 }
 
 .button {
@@ -96,6 +108,14 @@ body {
   border: none;
   border-radius: 3px;
   color: #fff;
+  /* padding-left: 14px; */
+  /* padding-right: 14px; */
+  /* padding-bottom: 8px; */
+
+  /* padding: 8px 18px 6px 18px; */
+
+  /* float: left; */
+  /* clear: left; */
 }
 
 /* .buttons a::before {
@@ -118,7 +138,19 @@ body {
   cursor: pointer;
   /* float: right; */
   /* text-align: end; */
+  /* position: relative; */
+  /* right: 0; */
 
   margin-right: 0;
   width: auto;
+  /* clear: right; */
+}
+
+.footer {
+  margin: 15px auto 30px auto;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
 }

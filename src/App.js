@@ -5,8 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="main-container">
-        <h1 className="Heading">Project: Random Quote Generator!</h1>
-
+        {/* <h1 className="Heading">Project: Random Quote Generator!</h1> */}
         <div className="container__box">
           <div className="quote-left"></div>
           <p className="quote__paragraph">
@@ -18,17 +17,25 @@ function App() {
           </div>
 
           <div className="buttons">
-            <a className="button socials" id="tweet-quote" href="#">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a className="button socials" id="tumblr-quote" href="#">
-              <i class="fa-brands fa-tumblr"></i>
-            </a>
-
+            <div className="socials">
+              <a className="button" id="tweet-quote" href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a className="button" id="tumblr-quote" href="#">
+                <i class="fa-brands fa-tumblr"></i>
+              </a>
+            </div>
             <button className="button" id="new-quote">
               New quote
             </button>
           </div>
+        </div>
+
+        <div className="footer">
+          by{" "}
+          <a href="#" className="link">
+            Vidya Sagar Mukkavili
+          </a>
         </div>
       </div>
     </div>
