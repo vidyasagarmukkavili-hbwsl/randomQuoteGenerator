@@ -1,38 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #171b22;
+  margin: 0;
+  padding: 0;
   color: white;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  /* max-width: 600px; */
+  max-width: 450px;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container__box {
+  background-color: white;
+  padding: 40px 50px;
+  color: #171b22;
+  border-radius: 3px;
+}
+
+.quote-left {
+  color: #171b22;
+  font-size: 2em;
+  display: inline-block;
+}
+
+.fa-quote-left {
+  color: #171b22;
+}
+
+.fa {
+  display: inline-block;
+}
+
+.quote__paragraph {
+  margin: 0;
+  color: #171b22;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+.quote__paragraph::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f10d";
+  font-weight: 900;
+
+  /* for some reason they thought it is a great idea to include font weight for icons so here it is */
+}
+
+.quote-author {
+  height: auto;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: right;
+}
+
+.buttons {
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+}
+
+.button {
+  /* float: left; */
+  /* left: 0; */
+  /* padding: 8px 18px 6px 18px; */
+  /* padding: 0px; */
+  /* padding-top: 0px; */
+  /* padding-top: 8px; */
+  text-align: center;
+  font-size: 1.2em;
+  /* margin-right: 5px; */
+  height: 30px;
+  width: 40px;
+  margin-left: 0;
+  margin-top: 30px;
+}
+#tweet-quote,
+#tumblr-quote {
+  background-color: #171b22;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.buttons a::before {
+  content: "\f099";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#new-quote {
+  height: 38px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #171b22;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  /* margin-top: 30px; */
+  opacity: 1;
+  cursor: pointer;
+  /* float: right; */
+  margin-right: 0;
+  width: auto;
 }
