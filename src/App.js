@@ -18,8 +18,12 @@ function App() {
           </div>
 
           <div className="buttons">
-            <a className="button socials" id="tweet-quote" href="#"></a>
-            <a className="button socials" id="tumblr-quote" href="#"></a>
+            <a className="button socials" id="tweet-quote" href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a className="button socials" id="tumblr-quote" href="#">
+              <i class="fa-brands fa-tumblr"></i>
+            </a>
 
             <button className="button" id="new-quote">
               New quote

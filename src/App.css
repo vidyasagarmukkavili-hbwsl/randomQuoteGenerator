@@ -89,17 +89,20 @@ body {
 }
 #tweet-quote,
 #tumblr-quote {
+  padding-top: 8px;
+  margin-right: 5px;
+
   background-color: #171b22;
   border: none;
   border-radius: 3px;
   color: #fff;
 }
 
-.buttons a::before {
+/* .buttons a::before {
   content: "\f099";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-}
+} */
 
 #new-quote {
   height: 38px;
@@ -114,6 +117,8 @@ body {
   opacity: 1;
   cursor: pointer;
   /* float: right; */
+  /* text-align: end; */
+
   margin-right: 0;
   width: auto;
 }
