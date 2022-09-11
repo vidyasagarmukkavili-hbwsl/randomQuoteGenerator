@@ -9,16 +9,27 @@
   right: 50%;
   -ms-transform: translateX(50%) translateY(-50%);
   transform: translateX(50%) translateY(-50%);
+  /* min-height: 100vh; */
+  /* background-color: red; */
 }
 
 body {
   background-color: #171b22;
+
   margin: 0;
   padding: 0;
   color: white;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   list-style: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.mainContainer {
+  height: 100vh;
+  width: auto;
+  background-color: #171b22;
+  transition: all 0.5s ease-in-out;
 }
 
 .main-container {
@@ -60,6 +71,7 @@ body {
   font-family: "Font Awesome 5 Free";
   content: "\f10d";
   font-weight: 900;
+  margin-right: 15px;
 
   /* for some reason they thought it is a great idea to include font weight for icons so here it is */
 }

@@ -1,0 +1,153 @@
+Okay so I am working on a simple Random Quote Generator React app and have used the a class component App along with Fetch API for the same.
+
+Every time I run the app(both in production and development mode) I am getting a ```TypeError: this is undefined``` in the console right when it goes through the ```this.setState()``` part in the ```fetchQuote()``` method. 
+
+The data is showing up in the console, when I ```console.log(tempText)``` but it is not able to enter the setState method and actually update the state variables for some reason and goes straight to the catch statement and throws the error.
+
+I have used the 'this' binding for that method inside the constructor.
+
+**App.js:**
+```
+import "./App.css";
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    // State Variables go here:
+    this.state = {
+      quoteText: "Initial text",
+      quoteAuthor: "Initial author",
+    };
+
+    this.fetchQuote = this.fetchQuote.bind(this);
+  }
+
+  // Accessing the fetchQuote() method inside the componentDidMount() Lifecycle method
+  componentDidMount() {
+    this.fetchQuote();
+  }
+
+
+  fetchQuote() {
+    let tempText = "Temptext";              // tempText  is just there for testing and changing the state value
+    let tempAuthor = "Tempauthor";          // tempAuthor is just there for testing and changing the state value
+
+    fetch("https://type.fit/api/quotes")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        let quoteIndex = Math.floor(Math.random() * data.length);
+
+        const newquoteText = data[quoteIndex].text;
+        const newquoteAuthor = data[quoteIndex].author;
+
+        tempAuthor = newquoteAuthor;
+        tempText = newquoteText;
+
+        // data
+        console.log(tempText);
+        console.log(tempAuthor);
+
+        // Setting the state variables here:
+        // This part is not working
+
+        this.setState({
+          quoteText: tempText,
+          quoteAuthor: tempAuthor,
+        });
+
+
+      }) // closing the .then for data
+      .catch((error) => {
+        console.log("There was some error here");
+        console.log(error);
+      });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="main-container">
+          <div className="container__box">
+            <div className="quote-left"></div>
+            <p className="quote__paragraph">
+              {this.state.quoteText}  
+              {/* Setting the Quote Text here */}
+            </p>
+            <div className="quote-author">
+              -{" "}
+              <span id="author">
+                {this.state.quoteAuthor}
+                {/* Setting the Author here */}
+              </span>
+            </div>
+
+            <div className="buttons">
+              <div className="socials">
+                <a className="button" id="tweet-quote" href="#">
+                  <i className="fa-brands fa-twitter"></i>
+                </a>
+                <a className="button" id="tumblr-quote" href="#">
+                  <i className="fa-brands fa-tumblr"></i>
+                </a>
+              </div>
+              <button
+                onClick={this.fetchQuote}
+                className="button"
+                id="new-quote"
+              >
+                New quote
+              </button>
+            </div>
+          </div>
+
+          <div className="footer">
+            by{" "}
+            <a href="#" className="link">
+              Vidya Sagar 
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+```
+
+**index.js:**
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  // <React.StrictMode>
+    <App />
+  // </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+I have tried using a different variation for ```this.setState()``` however that didn't work either:
+
+```
+        this.setState((state) => ({
+          quoteText: tempText,
+          quoteAuthor: tempAuthor,
+        }));
+```
+
+How can I fix this?
